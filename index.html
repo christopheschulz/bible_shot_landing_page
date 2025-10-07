@@ -20,7 +20,18 @@
                     <span class="logo-icon">📖</span>
                     <span class="logo-text">BibleShot</span>
                 </div>
-                <a href="#download" class="btn-primary btn-small">Télécharger</a>
+                <ul class="nav-menu">
+                    <li><a href="#concept" class="nav-link">Concept</a></li>
+                    <li><a href="#features" class="nav-link">Fonctionnalités</a></li>
+                    <li><a href="#themes" class="nav-link">Thèmes</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#download" class="btn-primary btn-small">Télécharger</a></li>
+                </ul>
+                <button class="burger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -30,31 +41,50 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Un shot de Parole vivante chaque jour</h1>
-                    <p class="hero-subtitle">Transforme ta routine spirituelle avec des messages bibliques inspirants et des quiz captivants</p>
-                    <div class="hero-buttons">
-                        <a href="#download" class="app-store-badge" aria-label="Télécharger sur l'App Store">
-                            <svg width="120" height="40" viewBox="0 0 120 40" fill="none">
-                                <rect width="120" height="40" rx="8" fill="black"/>
-                                <text x="60" y="13" font-family="SF Pro Text, -apple-system, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="400">Télécharger sur</text>
-                                <text x="60" y="28" font-family="SF Pro Display, -apple-system, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">App Store</text>
-                                <path d="M24 20.5c0-2.8 2.3-5.1 5.1-5.1.3 0 .5 0 .8.1-.8-1.2-2.2-2-3.7-2-1.6 0-2.9.8-3.7 1.5-.6.5-1.4.8-2.2.8s-1.6-.3-2.2-.8c-.8-.7-2.1-1.5-3.7-1.5-2.9 0-5.2 2.4-5.2 5.4 0 1.5.6 3 1.6 4.2 1 1.3 2.2 2.7 3.7 2.7 1.3 0 2-.6 2.9-1.3.8-.6 1.8-1.3 3.2-1.3 1.3 0 2.3.7 3.2 1.3.8.6 1.6 1.3 2.9 1.3 1.5 0 2.7-1.4 3.7-2.7.5-.7.9-1.4 1.2-2.2-.6-.3-1-.8-1.3-1.4-.3-.6-.5-1.3-.5-2z" fill="white"/>
-                            </svg>
-                        </a>
-                        <a href="#features" class="btn-secondary btn-large">En savoir plus</a>
+                    <div class="hero-badge-top">
+                        <span class="hero-badge-icon">📱</span>
+                        <span>Nouveau sur iOS</span>
                     </div>
-                    <div class="hero-badges">
-                        <div class="badge">
-                            <span class="badge-icon">⭐</span>
-                            <span class="badge-text">Application Premium</span>
+
+                    <h1 class="hero-title">La Parole qui transforme ta journée</h1>
+
+                    <p class="hero-description">
+                        Chaque matin, reçois un <strong>shot biblique</strong> puissant : une déclaration de foi inspirée des Écritures.
+                        Médite, apprends et grandis avec des quiz interactifs adaptés à ton niveau.
+                    </p>
+
+                    <div class="hero-features-list">
+                        <div class="hero-feature-item">
+                            <span class="hero-feature-check">✓</span>
+                            <span>Un shot quotidien personnalisé</span>
                         </div>
-                        <div class="badge">
-                            <span class="badge-icon">📱</span>
-                            <span class="badge-text">iPhone uniquement</span>
+                        <div class="hero-feature-item">
+                            <span class="hero-feature-check">✓</span>
+                            <span>Quiz biblique à 3 niveaux</span>
                         </div>
+                        <div class="hero-feature-item">
+                            <span class="hero-feature-check">✓</span>
+                            <span>7 thèmes visuels uniques</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#download" class="app-store-badge-hero" aria-label="Télécharger sur l'App Store">
+                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1234569600" alt="Télécharger dans l'App Store">
+                        </a>
+                        <div class="hero-price-tag">
+                            <span class="hero-price-amount">9,99 €</span>
+                            <span class="hero-price-detail">Achat unique · Sans abonnement</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-social-proof">
+                        <div class="hero-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="hero-social-text">Rejoint par des milliers de chrétiens</p>
                     </div>
                 </div>
-                <div class="hero-image">
+
+                <div class="hero-visual">
                     <div class="hero-carousel-wrapper">
                         <div class="hero-carousel-container">
                             <div class="hero-carousel-track">
@@ -81,7 +111,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Dots Navigation -->
                         <div class="hero-carousel-dots">
                             <button class="hero-carousel-dot active" data-slide="0" aria-label="Aller à la slide 1"></button>
                             <button class="hero-carousel-dot" data-slide="1" aria-label="Aller à la slide 2"></button>
@@ -100,33 +129,44 @@
     <!-- Concept Section -->
     <section class="concept" id="concept">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Qu'est-ce qu'un shot biblique ?</h2>
-                <p class="section-subtitle">Un message court et impactant inspiré d'un verset biblique, conçu pour t'inspirer chaque jour</p>
-            </div>
-            <div class="shots-examples">
-                <div class="shot-card">
-                    <div class="shot-content">
-                        <p class="shot-text">"Je suis guéri par Jésus."</p>
-                        <p class="shot-reference">Inspiré d'Ésaïe 53:5</p>
+            <div class="concept-content">
+                <div class="concept-text">
+                    <h2 class="concept-title">La Parole vivante dans ta poche</h2>
+                    <p class="concept-description">Chaque matin, reçois un <strong>shot biblique</strong> : une déclaration de foi puissante et personnelle, inspirée directement des Écritures. En quelques mots, transforme ta journée avec la vérité de Dieu.</p>
+
+                    <div class="concept-features">
+                        <div class="concept-feature-item">
+                            <div class="concept-feature-icon">📖</div>
+                            <div class="concept-feature-content">
+                                <h3 class="concept-feature-title">Format court et mémorable</h3>
+                                <p class="concept-feature-desc">Des messages concis qui restent dans ton cœur toute la journée</p>
+                            </div>
+                        </div>
+                        <div class="concept-feature-item">
+                            <div class="concept-feature-icon">💭</div>
+                            <div class="concept-feature-content">
+                                <h3 class="concept-feature-title">À la première personne</h3>
+                                <p class="concept-feature-desc">Des déclarations personnelles qui renforcent ton identité en Christ</p>
+                            </div>
+                        </div>
+                        <div class="concept-feature-item">
+                            <div class="concept-feature-icon">✨</div>
+                            <div class="concept-feature-content">
+                                <h3 class="concept-feature-title">Fondé sur les Écritures</h3>
+                                <p class="concept-feature-desc">Chaque shot est solidement ancré dans un verset biblique authentique</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="shot-card">
-                    <div class="shot-content">
-                        <p class="shot-text">"Je peux tout par Jésus qui me fortifie."</p>
-                        <p class="shot-reference">Inspiré de Philippiens 4:13</p>
-                    </div>
-                </div>
-                <div class="shot-card">
-                    <div class="shot-content">
-                        <p class="shot-text">"Je suis une lumière qui brille."</p>
-                        <p class="shot-reference">Inspiré de Matthieu 5:14</p>
-                    </div>
-                </div>
-                <div class="shot-card">
-                    <div class="shot-content">
-                        <p class="shot-text">"Je suis une nouvelle création en Christ."</p>
-                        <p class="shot-reference">Inspiré de 2 Corinthiens 5:17</p>
+
+                <div class="concept-visual">
+                    <div class="concept-shot-display">
+                        <div class="concept-shot-card">
+                            <div class="concept-shot-icon">📖</div>
+                            <h3 class="concept-shot-label">Shot du jour</h3>
+                            <p class="concept-shot-text">"Je suis une nouvelle création en Christ."</p>
+                            <p class="concept-shot-verse">2 Corinthiens 5:17</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,39 +177,58 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Fonctionnalités principales</h2>
-                <p class="section-subtitle">Une expérience complète pour nourrir ta foi quotidiennement</p>
+                <h2 class="section-title">Tout ce dont tu as besoin pour grandir spirituellement</h2>
+                <p class="section-subtitle">Des outils simples et puissants pour transformer ta relation avec la Parole</p>
             </div>
+
+            <div class="features-main">
+                <div class="feature-main-card">
+                    <div class="feature-main-content">
+                        <span class="feature-badge">📅 Quotidien</span>
+                        <h3 class="feature-main-title">Un nouveau shot chaque jour</h3>
+                        <p class="feature-main-desc">Commence ta journée avec une déclaration puissante. Chaque matin à minuit, découvre un nouveau shot biblique personnalisé pour t'inspirer et te fortifier.</p>
+                        <ul class="feature-list">
+                            <li>✓ Renouvelé automatiquement chaque jour</li>
+                            <li>✓ Notification personnalisable</li>
+                            <li>✓ Accessible hors ligne</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-main-card feature-main-card-reverse">
+                    <div class="feature-main-content">
+                        <span class="feature-badge">🎮 Quiz Interactif</span>
+                        <h3 class="feature-main-title">Teste ta connaissance biblique</h3>
+                        <p class="feature-main-desc">Retrouve le verset qui a inspiré le shot du jour. Choisis ton niveau de difficulté et progresse à ton rythme avec un système de points motivant.</p>
+                        <ul class="feature-list">
+                            <li>✓ 3 niveaux de difficulté</li>
+                            <li>✓ Une tentative par jour</li>
+                            <li>✓ Système de récompenses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3 class="feature-title">Shot Quotidien</h3>
-                    <p class="feature-description">Un nouveau shot biblique chaque jour pour commencer ta journée avec inspiration et motivation.</p>
+                <div class="feature-card-small">
+                    <div class="feature-icon-small">📊</div>
+                    <h4 class="feature-title-small">Statistiques</h4>
+                    <p class="feature-desc-small">Suis ta progression avec des stats détaillées</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3 class="feature-title">Quiz à 3 Niveaux</h3>
-                    <p class="feature-description">Défie-toi avec des quiz bibliques de difficulté croissante. Simple, Moyen ou Difficile : à toi de choisir !</p>
+                <div class="feature-card-small">
+                    <div class="feature-icon-small">❤️</div>
+                    <h4 class="feature-title-small">Favoris</h4>
+                    <p class="feature-desc-small">Sauvegarde tes shots préférés</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Statistiques Détaillées</h3>
-                    <p class="feature-description">Suis ta progression avec des stats complètes : taux de réussite, séries, points et historique.</p>
+                <div class="feature-card-small">
+                    <div class="feature-icon-small">🎨</div>
+                    <h4 class="feature-title-small">7 Thèmes</h4>
+                    <p class="feature-desc-small">Personnalise ton expérience visuelle</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">❤️</div>
-                    <h3 class="feature-title">Favoris</h3>
-                    <p class="feature-description">Sauvegarde tes shots préférés et retrouve-les facilement dans ta collection personnelle.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">7 Thèmes Visuels</h3>
-                    <p class="feature-description">Personnalise ton expérience avec 7 thèmes soignés : Classique, Sombre, Nord, Océan, Forêt, Lavande, Aurore.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h3 class="feature-title">Notifications</h3>
-                    <p class="feature-description">Reçois un rappel quotidien à l'heure de ton choix pour ne jamais manquer ton shot du jour.</p>
+                <div class="feature-card-small">
+                    <div class="feature-icon-small">🔔</div>
+                    <h4 class="feature-title-small">Rappels</h4>
+                    <p class="feature-desc-small">Notifications à l'heure de ton choix</p>
                 </div>
             </div>
         </div>
@@ -178,45 +237,58 @@
     <!-- Quiz Section -->
     <section class="quiz-section">
         <div class="container">
-            <div class="quiz-content">
-                <div class="quiz-text">
-                    <h2 class="section-title">Un quiz captivant</h2>
-                    <p class="quiz-description">Retrouve le verset biblique qui a inspiré le shot du jour. Choisis ta difficulté et gagne des points selon tes performances.</p>
-                    <div class="difficulty-levels">
-                        <div class="difficulty-item">
-                            <span class="difficulty-icon">🟢</span>
-                            <div class="difficulty-info">
-                                <h4 class="difficulty-name">Simple</h4>
-                                <p class="difficulty-desc">Textes bibliques complets</p>
-                            </div>
-                        </div>
-                        <div class="difficulty-item">
-                            <span class="difficulty-icon">🟡</span>
-                            <div class="difficulty-info">
-                                <h4 class="difficulty-name">Moyen</h4>
-                                <p class="difficulty-desc">Seulement les livres bibliques</p>
-                            </div>
-                        </div>
-                        <div class="difficulty-item">
-                            <span class="difficulty-icon">🔴</span>
-                            <div class="difficulty-info">
-                                <h4 class="difficulty-name">Difficile</h4>
-                                <p class="difficulty-desc">Références précises demandées</p>
-                            </div>
-                        </div>
+            <div class="section-header">
+                <h2 class="section-title">Apprends en t'amusant</h2>
+                <p class="section-subtitle">Teste ta connaissance de la Bible avec un quiz quotidien adapté à ton niveau</p>
+            </div>
+
+            <div class="quiz-layout">
+                <div class="quiz-example">
+                    <div class="quiz-example-header">
+                        <span class="quiz-example-badge">Quiz du jour</span>
+                        <span class="quiz-example-level">Niveau: Moyen</span>
+                    </div>
+                    <div class="quiz-example-question">
+                        <p class="quiz-question-label">Quel verset a inspiré ce shot ?</p>
+                        <p class="quiz-shot-display">"Je suis aimé et sauvé par Dieu."</p>
+                    </div>
+                    <div class="quiz-example-options">
+                        <button class="quiz-option-btn">Jean</button>
+                        <button class="quiz-option-btn quiz-option-correct">Jean ✓</button>
+                        <button class="quiz-option-btn">Romains</button>
+                        <button class="quiz-option-btn">1 Jean</button>
+                    </div>
+                    <div class="quiz-example-footer">
+                        <span class="quiz-points">+50 points</span>
                     </div>
                 </div>
-                <div class="quiz-visual">
-                    <div class="quiz-card">
-                        <div class="quiz-header">
-                            <p class="quiz-question">Quel verset a inspiré ce shot ?</p>
-                            <p class="quiz-shot-display">"Je suis aimé et sauvé par Dieu."</p>
+
+                <div class="quiz-info">
+                    <h3 class="quiz-info-title">3 niveaux pour progresser</h3>
+                    <div class="quiz-levels">
+                        <div class="quiz-level-card">
+                            <div class="quiz-level-header">
+                                <span class="quiz-level-icon">🟢</span>
+                                <h4 class="quiz-level-name">Simple</h4>
+                            </div>
+                            <p class="quiz-level-desc">Références bibliques complètes<br><strong>Ex: Jean 3:16</strong></p>
+                            <span class="quiz-level-points">+25 points</span>
                         </div>
-                        <div class="quiz-options">
-                            <div class="quiz-option">Jean 3:16</div>
-                            <div class="quiz-option quiz-option-correct">Jean 3:16 ✓</div>
-                            <div class="quiz-option">Romains 5:8</div>
-                            <div class="quiz-option">1 Jean 4:9</div>
+                        <div class="quiz-level-card">
+                            <div class="quiz-level-header">
+                                <span class="quiz-level-icon">🟡</span>
+                                <h4 class="quiz-level-name">Moyen</h4>
+                            </div>
+                            <p class="quiz-level-desc">Livres bibliques uniquement<br><strong>Ex: Jean</strong></p>
+                            <span class="quiz-level-points">+50 points</span>
+                        </div>
+                        <div class="quiz-level-card">
+                            <div class="quiz-level-header">
+                                <span class="quiz-level-icon">🔴</span>
+                                <h4 class="quiz-level-name">Difficile</h4>
+                            </div>
+                            <p class="quiz-level-desc">Références précises demandées<br><strong>Ex: Jean 3:16</strong></p>
+                            <span class="quiz-level-points">+100 points</span>
                         </div>
                     </div>
                 </div>
@@ -228,53 +300,40 @@
     <section class="themes" id="themes">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">7 thèmes pour personnaliser ton expérience</h2>
-                <p class="section-subtitle">Choisis l'ambiance qui correspond à ton moment de méditation</p>
+                <h2 class="section-title">7 thèmes pour ton style</h2>
+                <p class="section-subtitle">Personnalise ton expérience avec des thèmes soigneusement designés</p>
             </div>
-            <div class="themes-carousel">
-                <div class="theme-card" data-theme="classique">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #5FA3D0 0%, #7BC67E 100%);">
-                        <span class="theme-name">Classique</span>
+            <div class="themes-grid">
+                <div class="theme-card-new">
+                    <div class="theme-visual" style="background: linear-gradient(135deg, #5FA3D0 0%, #7BC67E 100%);"></div>
+                    <div class="theme-info">
+                        <h4 class="theme-name">Classique</h4>
+                        <p class="theme-desc">Clair et épuré</p>
                     </div>
-                    <p class="theme-description">Clair et épuré, idéal pour la journée</p>
                 </div>
-                <div class="theme-card" data-theme="sombre">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #000000 0%, #2D2D2D 100%);">
-                        <span class="theme-name">Sombre</span>
+                <div class="theme-card-new">
+                    <div class="theme-visual" style="background: linear-gradient(135deg, #000000 0%, #2D2D2D 100%);"></div>
+                    <div class="theme-info">
+                        <h4 class="theme-name">Sombre</h4>
+                        <p class="theme-desc">Pour la nuit</p>
                     </div>
-                    <p class="theme-description">Repose les yeux en faible luminosité</p>
                 </div>
-                <div class="theme-card" data-theme="nord">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #81B6D1 0%, #A8C5D1 100%);">
-                        <span class="theme-name">Nord</span>
+                <div class="theme-card-new">
+                    <div class="theme-visual" style="background: linear-gradient(135deg, #2E86AB 0%, #4FA3C5 100%);"></div>
+                    <div class="theme-info">
+                        <h4 class="theme-name">Océan</h4>
+                        <p class="theme-desc">Calme et profond</p>
                     </div>
-                    <p class="theme-description">Palette froide et apaisante</p>
                 </div>
-                <div class="theme-card" data-theme="ocean">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #2E86AB 0%, #4FA3C5 100%);">
-                        <span class="theme-name">Océan</span>
+                <div class="theme-card-new">
+                    <div class="theme-visual" style="background: linear-gradient(135deg, #4A7C59 0%, #6B9A7A 100%);"></div>
+                    <div class="theme-info">
+                        <h4 class="theme-name">Forêt</h4>
+                        <p class="theme-desc">Nature ressourçante</p>
                     </div>
-                    <p class="theme-description">Profondeurs marines apaisantes</p>
-                </div>
-                <div class="theme-card" data-theme="foret">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #4A7C59 0%, #6B9A7A 100%);">
-                        <span class="theme-name">Forêt</span>
-                    </div>
-                    <p class="theme-description">Nature verdoyante et ressourçante</p>
-                </div>
-                <div class="theme-card" data-theme="lavande">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #8B7AA8 0%, #A896C4 100%);">
-                        <span class="theme-name">Lavande</span>
-                    </div>
-                    <p class="theme-description">Douceur spirituelle et méditative</p>
-                </div>
-                <div class="theme-card" data-theme="aurore">
-                    <div class="theme-preview" style="background: linear-gradient(135deg, #E89AAB 0%, #F5B5C5 100%);">
-                        <span class="theme-name">Aurore</span>
-                    </div>
-                    <p class="theme-description">Premières lueurs du jour, évoque l'espoir</p>
                 </div>
             </div>
+            <p class="themes-note">+ 3 autres thèmes disponibles dans l'app</p>
         </div>
     </section>
 
@@ -338,11 +397,11 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Y a-t-il des achats intégrés ou un abonnement ?</span>
+                        <span>Quel est le prix de l'application ?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Non, BibleShot est une application payante avec un paiement unique. Toutes les fonctionnalités sont incluses, sans abonnement ni achat supplémentaire.</p>
+                        <p>BibleShot coûte 9,99 € en achat unique sur l'App Store. Toutes les fonctionnalités sont incluses, sans abonnement ni achat intégré supplémentaire.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -382,13 +441,9 @@
             <div class="cta-content">
                 <h2 class="cta-title">Prêt à transformer ta routine spirituelle ?</h2>
                 <p class="cta-subtitle">Rejoins des milliers d'utilisateurs qui nourrissent leur foi quotidiennement</p>
+                <p class="cta-price">9,99 € - Sans abonnement, sans achat intégré</p>
                 <a href="#" class="app-store-badge-large" aria-label="Télécharger sur l'App Store">
-                    <svg width="160" height="53" viewBox="0 0 160 53" fill="none">
-                        <rect width="160" height="53" rx="11" fill="black"/>
-                        <text x="80" y="18" font-family="SF Pro Text, -apple-system, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="400">Télécharger sur</text>
-                        <text x="80" y="38" font-family="SF Pro Display, -apple-system, sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="600">App Store</text>
-                        <path d="M30 27c0-3.7 3-6.8 6.8-6.8.4 0 .7 0 1 .1-1-1.6-2.9-2.6-4.9-2.6-2.1 0-3.8 1-4.9 2-.8.7-1.8 1-2.9 1s-2.1-.4-2.9-1c-1.1-1-2.8-2-4.9-2-3.8 0-6.9 3.2-6.9 7.2 0 2 .8 4 2.1 5.6 1.3 1.7 2.9 3.6 4.9 3.6 1.7 0 2.7-.8 3.8-1.7 1.1-.8 2.4-1.7 4.2-1.7 1.7 0 3.1.9 4.2 1.7 1.1.8 2.1 1.7 3.8 1.7 2 0 3.6-1.9 4.9-3.6.7-.9 1.2-1.9 1.6-2.9-.8-.4-1.3-1.1-1.7-1.9-.4-.8-.7-1.7-.7-2.7z" fill="white"/>
-                    </svg>
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&amp;releaseDate=1234569600" alt="Télécharger dans l'App Store" width="160" height="53">
                 </a>
             </div>
         </div>

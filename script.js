@@ -345,22 +345,36 @@ if ('IntersectionObserver' in window) {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// ===== MOBILE MENU (if needed) =====
+// ===== MOBILE MENU =====
 function initMobileMenu() {
     const burger = document.querySelector('.burger-menu');
-    const nav = document.querySelector('.nav-links');
+    const nav = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     if (burger && nav) {
-        burger.addEventListener('click', () => {
+        // Toggle menu
+        burger.addEventListener('click', (e) => {
+            e.stopPropagation();
             nav.classList.toggle('active');
             burger.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!burger.contains(e.target) && !nav.contains(e.target)) {
+            if (!burger.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 burger.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     }
