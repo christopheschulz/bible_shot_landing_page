@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Read(//Users/christopheschulz/**)",
+      "Bash(open index.html)",
+      "Bash(open privacy.html)"
     ],
     "deny": [],
     "ask": []

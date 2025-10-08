@@ -88,12 +88,14 @@ function initHeroCarousel() {
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Only handle anchor links, not external pages
+        if (!href || href === '#' || !href.startsWith('#')) return;
+
         e.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(href);
 
-        if (targetId === '#') return;
-
-        const targetElement = document.querySelector(targetId);
         if (targetElement) {
             const navbarHeight = document.querySelector('.navbar').offsetHeight;
             const targetPosition = targetElement.offsetTop - navbarHeight;
