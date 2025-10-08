@@ -182,24 +182,99 @@ animateElements.forEach(el => {
 });
 
 // ===== THEME CARDS INTERACTION =====
-const themeCards = document.querySelectorAll('.theme-card');
+function initThemeCards() {
+    const themeCards = document.querySelectorAll('.theme-card-new');
+    const themesSection = document.querySelector('.themes');
 
-themeCards.forEach(card => {
-    card.addEventListener('click', () => {
-        // Remove active class from all cards
-        themeCards.forEach(c => c.classList.remove('active-theme'));
+    // Définir les palettes de couleurs pour chaque thème (basées sur les vraies couleurs des screenshots)
+    const themeColors = {
+        'classique': {
+            background: 'linear-gradient(135deg, #E8EEF2 0%, #EDF3F7 50%, #E3EBF0 100%)',
+            border: 'rgba(95, 163, 208, 0.2)'
+        },
+        'sombre': {
+            background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #0D0D0D 100%)',
+            border: 'rgba(255, 255, 255, 0.1)',
+            textColor: '#FFFFFF',
+            subtitleColor: 'rgba(255, 255, 255, 0.7)'
+        },
+        'nord': {
+            background: 'linear-gradient(135deg, #3D4F5C 0%, #475663 50%, #384650 100%)',
+            border: 'rgba(139, 186, 211, 0.3)',
+            textColor: '#FFFFFF',
+            subtitleColor: 'rgba(255, 255, 255, 0.7)'
+        },
+        'ocean': {
+            background: 'linear-gradient(135deg, #DDE9EE 0%, #E2EEF3 50%, #D8E5EB 100%)',
+            border: 'rgba(69, 143, 168, 0.25)'
+        },
+        'foret': {
+            background: 'linear-gradient(135deg, #EBE9E3 0%, #F0EEE8 50%, #E6E4DE 100%)',
+            border: 'rgba(92, 132, 101, 0.25)'
+        },
+        'lavande': {
+            background: 'linear-gradient(135deg, #EDE8F0 0%, #F2EDF5 50%, #E9E4EC 100%)',
+            border: 'rgba(145, 119, 161, 0.25)'
+        },
+        'aurore': {
+            background: 'linear-gradient(135deg, #F7EDE8 0%, #FCF2ED 50%, #F2E8E3 100%)',
+            border: 'rgba(218, 143, 143, 0.25)'
+        }
+    };
 
-        // Add active class to clicked card
-        card.classList.add('active-theme');
+    themeCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Remove active class from all cards
+            themeCards.forEach(c => c.classList.remove('active-theme'));
 
-        // Optional: Add a visual feedback
-        const preview = card.querySelector('.theme-preview');
-        preview.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            preview.style.transform = 'scale(1)';
-        }, 150);
+            // Add active class to clicked card
+            card.classList.add('active-theme');
+
+            // Get theme name and normalize accents
+            const themeName = card.querySelector('.theme-name').textContent.toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Remove accents
+            const themeData = themeColors[themeName];
+
+            if (themeData && themesSection) {
+                // Apply theme colors to the section
+                themesSection.style.transition = 'all 0.6s ease';
+                themesSection.style.background = themeData.background;
+                themesSection.style.borderTopColor = themeData.border;
+                themesSection.style.borderBottomColor = themeData.border;
+
+                // Change text colors if theme is dark
+                const sectionTitle = themesSection.querySelector('.section-title');
+                const sectionSubtitle = themesSection.querySelector('.section-subtitle');
+
+                if (themeData.textColor) {
+                    sectionTitle.style.color = themeData.textColor;
+                    sectionSubtitle.style.color = themeData.subtitleColor;
+                } else {
+                    sectionTitle.style.color = '';
+                    sectionSubtitle.style.color = '';
+                }
+            }
+
+            // Visual feedback
+            const screenshot = card.querySelector('.theme-screenshot');
+            screenshot.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                screenshot.style.transform = 'scale(1)';
+            }, 150);
+
+            // Show toast
+            showToast(`Thème ${card.querySelector('.theme-name').textContent} appliqué`);
+        });
     });
-});
+
+    // Appliquer le thème Classique par défaut au chargement
+    if (themesSection) {
+        const classiqueTheme = themeColors['classique'];
+        themesSection.style.background = classiqueTheme.background;
+        themesSection.style.borderTopColor = classiqueTheme.border;
+        themesSection.style.borderBottomColor = classiqueTheme.border;
+    }
+}
 
 // ===== DEMO ICONS INTERACTION =====
 const demoIcons = document.querySelectorAll('.demo-icon');
@@ -474,6 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initHeroCarousel();
     initActiveMenu();
+    initThemeCards();
 
     // Add loading class removal
     document.body.classList.add('loaded');
