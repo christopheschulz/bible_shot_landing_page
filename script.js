@@ -433,10 +433,47 @@ console.log('%c🙏 BibleShot - Un shot de Parole vivante chaque jour',
 console.log('%cDéveloppé avec ❤️ pour nourrir ta foi quotidiennement',
     'font-size: 12px; color: #7BC67E;');
 
+// ===== ACTIVE MENU ON SCROLL =====
+function initActiveMenu() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px', // Section is active when it's in the middle 10% of viewport
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                // Add active class to corresponding link
+                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+}
+
 // ===== INITIALIZE =====
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initHeroCarousel();
+    initActiveMenu();
 
     // Add loading class removal
     document.body.classList.add('loaded');
