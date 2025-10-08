@@ -442,6 +442,13 @@ button:focus-visible {
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
+.hero-cta-1{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    justify-content: center;
+}
 
 .app-store-badge-hero {
     flex-shrink: 0;
@@ -463,6 +470,7 @@ button:focus-visible {
     flex-direction: column;
     gap: 2px;
 }
+
 
 .hero-price-amount {
     font-size: var(--font-size-3xl);
