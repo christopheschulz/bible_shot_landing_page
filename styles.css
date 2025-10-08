@@ -442,13 +442,6 @@ button:focus-visible {
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
-.hero-cta-1{
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-    justify-content: center;
-}
 
 .app-store-badge-hero {
     flex-shrink: 0;
@@ -1302,32 +1295,10 @@ button:focus-visible {
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    background: var(--color-background);
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -25%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-.cta-section::after {
-    content: '';
-    position: absolute;
-    bottom: -40%;
-    right: -20%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
 }
 
 .cta-content {
@@ -1335,32 +1306,35 @@ button:focus-visible {
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cta-title {
     font-size: var(--font-size-4xl);
     font-weight: 800;
     margin-bottom: var(--spacing-md);
-    color: white;
+    color: var(--color-text);
 }
 
 .cta-subtitle {
     font-size: var(--font-size-xl);
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
 }
 
 .cta-price {
     font-size: var(--font-size-lg);
     font-weight: 700;
-    color: white;
+    color: var(--color-text);
     margin-bottom: var(--spacing-xl);
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--color-background);
     border-radius: var(--radius-md);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    border: 2px solid var(--color-primary);
 }
 
 /* ===== FOOTER ===== */
