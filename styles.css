@@ -145,6 +145,9 @@ button:focus-visible {
     width: 40px;   /* ajuste la taille que tu veux */
     height: 40px;  /* facultatif si ton image est carrée */
     vertical-align: middle;  /* pour aligner avec le texte */
+    border-radius: 8px; /* optionnel, pour arrondir les coins */
+    
+
 }
 
 
