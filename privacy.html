@@ -29,7 +29,7 @@
         <div class="container">
             <div class="legal-content">
                 <h1>Politique de Confidentialité</h1>
-                <p class="legal-date">Dernière mise à jour : 7 octobre 2025</p>
+                <p class="legal-date">Dernière mise à jour : 14 octobre 2025</p>
 
                 <h2>1. Introduction</h2>
                 <p>Bienvenue sur BibleShot. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informe sur la manière dont nous traitons vos données personnelles lorsque vous utilisez notre application mobile.</p>
@@ -45,25 +45,49 @@
                     <li>Vos paramètres de notifications</li>
                 </ul>
 
-                <h3>2.2 Données que nous ne collectons PAS</h3>
+                <h3>2.2 Données d'analyse anonymisées</h3>
+                <p>Pour améliorer l'application et comprendre comment elle est utilisée, nous collectons des données d'usage anonymisées via Mixpanel :</p>
+                <ul>
+                    <li>Actions effectuées dans l'app (quiz joués, shots consultés, etc.)</li>
+                    <li>Informations techniques (version de l'app, modèle d'appareil, version iOS)</li>
+                    <li>Données de performance et de stabilité de l'application</li>
+                    <li>Un identifiant anonyme unique (non lié à votre identité personnelle)</li>
+                </ul>
+
+                <h3>2.3 Données que nous ne collectons PAS</h3>
                 <ul>
                     <li>Aucune donnée personnelle identifiable (nom, email, adresse)</li>
-                    <li>Aucune donnée de localisation</li>
-                    <li>Aucune donnée de navigation ou de tracking</li>
-                    <li>Aucune donnée partagée avec des tiers</li>
+                    <li>Aucune donnée de localisation précise</li>
+                    <li>Aucun contenu de vos réponses aux quiz</li>
+                    <li>Aucune information financière (gérée directement par Apple)</li>
                 </ul>
 
                 <h2>3. Utilisation de vos données</h2>
+                <h3>3.1 Données locales</h3>
                 <p>Les données stockées localement sur votre appareil sont utilisées uniquement pour :</p>
                 <ul>
                     <li>Personnaliser votre expérience (thème, notifications)</li>
                     <li>Sauvegarder votre progression et vos statistiques</li>
                     <li>Conserver vos shots favoris</li>
                 </ul>
-                <p><strong>Aucune de ces données n'est transmise à nos serveurs ou à des tiers.</strong></p>
+                <p><strong>Ces données personnelles ne sont jamais transmises à nos serveurs.</strong></p>
+
+                <h3>3.2 Données d'analyse (Mixpanel)</h3>
+                <p>Les données anonymisées collectées via Mixpanel sont utilisées pour :</p>
+                <ul>
+                    <li>Comprendre comment l'application est utilisée et améliorer l'expérience utilisateur</li>
+                    <li>Identifier et résoudre les problèmes techniques</li>
+                    <li>Mesurer l'engagement et les fonctionnalités les plus appréciées</li>
+                    <li>Optimiser les performances de l'application</li>
+                </ul>
+                <p>Ces données sont agrégées et anonymes. Elles ne permettent pas de vous identifier personnellement.</p>
 
                 <h2>4. Stockage et sécurité</h2>
-                <p>Toutes vos données sont stockées localement sur votre iPhone via AsyncStorage (technologie sécurisée d'Apple). Vos données sont protégées par les mécanismes de sécurité natifs d'iOS.</p>
+                <h3>4.1 Stockage local</h3>
+                <p>Vos données personnelles (préférences, statistiques, favoris) sont stockées localement sur votre iPhone via AsyncStorage (technologie sécurisée d'Apple). Ces données sont protégées par les mécanismes de sécurité natifs d'iOS.</p>
+
+                <h3>4.2 Données d'analyse</h3>
+                <p>Les données anonymisées sont transmises de manière sécurisée à Mixpanel via HTTPS. Mixpanel est certifié conforme au RGPD et respecte les normes internationales de protection des données. Pour plus d'informations : <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener">Politique de confidentialité de Mixpanel</a>.</p>
 
                 <h2>5. Notifications</h2>
                 <p>Si vous activez les notifications :</p>
@@ -75,34 +99,50 @@
                 </ul>
 
                 <h2>6. Partage de données</h2>
-                <p>BibleShot ne partage <strong>aucune donnée</strong> avec des tiers. L'application fonctionne entièrement hors ligne et aucune communication externe n'est effectuée, sauf pour :</p>
+                <p>BibleShot partage uniquement des données anonymisées avec les partenaires suivants :</p>
                 <ul>
-                    <li>L'achat initial sur l'App Store (géré par Apple)</li>
-                    <li>Le partage manuel de shots que vous choisissez d'envoyer via les outils de partage iOS</li>
+                    <li><strong>Mixpanel</strong> : Service d'analyse qui reçoit des données d'usage anonymisées pour nous aider à améliorer l'application</li>
+                    <li><strong>Apple</strong> : Pour la gestion des achats et abonnements via l'App Store</li>
                 </ul>
+                <p><strong>Vos données personnelles (préférences, statistiques, favoris) ne sont jamais partagées avec des tiers.</strong> Seules des données d'usage anonymisées et agrégées sont transmises à Mixpanel.</p>
+
+                <p>Vous pouvez également choisir de partager manuellement des shots via les outils de partage iOS (Messages, réseaux sociaux, etc.).</p>
 
                 <h2>7. Vos droits</h2>
                 <p>Conformément au RGPD et aux lois sur la protection des données, vous avez le droit de :</p>
                 <ul>
-                    <li><strong>Accéder</strong> à vos données : Toutes vos données sont visibles dans l'application</li>
+                    <li><strong>Accéder</strong> à vos données : Toutes vos données locales sont visibles dans l'application</li>
                     <li><strong>Modifier</strong> vos données : Changez vos préférences dans les paramètres</li>
-                    <li><strong>Supprimer</strong> vos données : Désinstallez l'application pour supprimer toutes les données locales</li>
-                    <li><strong>Exporter</strong> vos données : Nous ne stockons aucune donnée sur nos serveurs, vos données restent sur votre appareil</li>
+                    <li><strong>Supprimer</strong> vos données locales : Désinstallez l'application ou réinitialisez-la dans les paramètres</li>
+                    <li><strong>Refuser le tracking</strong> : Vous pouvez désactiver le suivi des données d'analyse dans les réglages iOS (Confidentialité > Suivi) ou nous contacter pour demander la suppression de vos données Mixpanel</li>
+                    <li><strong>Portabilité</strong> : Vos données personnelles restent sur votre appareil</li>
                 </ul>
 
                 <h2>8. Conservation des données</h2>
-                <p>Vos données sont conservées localement sur votre appareil jusqu'à ce que vous :</p>
+                <h3>8.1 Données locales</h3>
+                <p>Vos données personnelles sont conservées localement sur votre appareil jusqu'à ce que vous :</p>
                 <ul>
                     <li>Supprimiez l'application</li>
                     <li>Réinitialisiez vos données dans les paramètres de l'app</li>
                     <li>Réinitialisiez votre appareil</li>
                 </ul>
 
+                <h3>8.2 Données d'analyse</h3>
+                <p>Les données anonymisées collectées par Mixpanel sont conservées conformément à leur politique de rétention (généralement 5 ans maximum). Vous pouvez demander la suppression de ces données en nous contactant.</p>
+
                 <h2>9. Données des mineurs</h2>
-                <p>BibleShot est accessible à tous les âges (classification 4+). Aucune donnée personnelle n'étant collectée, l'application est sûre pour les utilisateurs de tous âges.</p>
+                <p>BibleShot est accessible à tous les âges (classification 4+). Nous ne collectons aucune donnée personnelle identifiable. Les seules données collectées sont des informations d'usage anonymisées qui ne permettent pas d'identifier les utilisateurs, y compris les mineurs.</p>
 
                 <h2>10. Cookies et technologies de suivi</h2>
-                <p>L'application <strong>n'utilise aucun cookie</strong>, pixel de suivi, ou technologie de tracking tiers. Aucun système d'analyse (analytics) n'est intégré.</p>
+                <p>L'application mobile <strong>n'utilise aucun cookie</strong> car elle ne fonctionne pas dans un navigateur web.</p>
+
+                <p>Nous utilisons <strong>Mixpanel</strong> comme service d'analyse pour collecter des données d'usage anonymisées. Mixpanel utilise un identifiant unique anonyme pour suivre les événements dans l'application, mais cet identifiant n'est pas lié à votre identité personnelle.</p>
+
+                <p>Vous pouvez contrôler le suivi des données d'analyse :</p>
+                <ul>
+                    <li>Via les réglages iOS : Réglages > Confidentialité > Suivi</li>
+                    <li>En nous contactant pour demander l'opt-out complet de Mixpanel</li>
+                </ul>
 
                 <h2>11. Modifications de cette politique</h2>
                 <p>Nous pouvons mettre à jour cette politique de confidentialité occasionnellement. En cas de modification importante, nous vous en informerons via une mise à jour de l'application. La date de "dernière mise à jour" en haut de cette page sera modifiée.</p>
@@ -117,15 +157,23 @@
                 <h2>13. Conformité RGPD</h2>
                 <p>BibleShot respecte le Règlement Général sur la Protection des Données (RGPD) :</p>
                 <ul>
-                    <li><strong>Minimisation des données</strong> : Nous collectons uniquement les données strictement nécessaires</li>
-                    <li><strong>Consentement</strong> : Les notifications nécessitent votre consentement explicite</li>
-                    <li><strong>Transparence</strong> : Cette politique explique clairement nos pratiques</li>
-                    <li><strong>Sécurité</strong> : Vos données sont protégées par iOS</li>
-                    <li><strong>Portabilité</strong> : Vos données restent sur votre appareil</li>
+                    <li><strong>Minimisation des données</strong> : Nous collectons uniquement les données strictement nécessaires à l'amélioration de l'application</li>
+                    <li><strong>Anonymisation</strong> : Les données d'analyse sont anonymisées et ne permettent pas de vous identifier</li>
+                    <li><strong>Consentement</strong> : Vous êtes informé de la collecte de données et pouvez refuser le tracking</li>
+                    <li><strong>Transparence</strong> : Cette politique explique clairement nos pratiques de collecte et d'utilisation des données</li>
+                    <li><strong>Sécurité</strong> : Vos données personnelles sont protégées par iOS, les données d'analyse sont transmises via HTTPS</li>
+                    <li><strong>Droits des utilisateurs</strong> : Vous pouvez accéder, modifier et supprimer vos données à tout moment</li>
+                    <li><strong>Portabilité</strong> : Vos données personnelles restent sur votre appareil</li>
+                </ul>
+
+                <h3>13.1 Base légale du traitement</h3>
+                <ul>
+                    <li><strong>Données locales</strong> : Nécessaires à l'exécution du contrat (fourniture du service)</li>
+                    <li><strong>Données d'analyse</strong> : Intérêt légitime à améliorer notre service, avec possibilité d'opposition</li>
                 </ul>
 
                 <div class="legal-footer">
-                    <p><strong>En résumé :</strong> BibleShot ne collecte aucune donnée personnelle, ne vous piste pas, et respecte totalement votre vie privée. Toutes vos informations restent sur votre iPhone.</p>
+                    <p><strong>En résumé :</strong> BibleShot collecte uniquement des données d'usage anonymisées via Mixpanel pour améliorer l'application. Aucune donnée personnelle identifiable n'est collectée. Toutes vos informations personnelles (préférences, statistiques, favoris) restent sur votre iPhone et ne sont jamais transmises à nos serveurs.</p>
                 </div>
             </div>
         </div>
