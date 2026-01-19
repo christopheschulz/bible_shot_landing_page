@@ -427,19 +427,20 @@ L'application combine :
 
 ## 💰 Modèle Économique
 
-### Application Payante
-- **Prix** : Défini sur l'App Store Connect
-- **Pas d'abonnement** : Paiement unique
-- **Pas d'achats in-app** : Toutes les fonctionnalités incluses
+### Application Gratuite avec Soutien Volontaire
+- **Entièrement gratuite** : Toutes les fonctionnalités accessibles sans frais
+- **Abonnement de soutien optionnel** : Pour ceux qui souhaitent contribuer au développement
 - **Pas de publicité** : Expérience pure et sans distraction
+- **Pas de restriction** : Aucune fonctionnalité verrouillée derrière un paywall
 
-### Justification du Prix
+### Valeur Offerte
 - Design premium et soigné
 - 7 thèmes personnalisés
 - Contenu biblique de qualité
 - Mises à jour régulières
 - Support client
 - Pas de monétisation de l'attention
+- Accessible à tous, indépendamment des moyens financiers
 
 ---
 
