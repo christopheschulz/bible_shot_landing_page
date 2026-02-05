@@ -1238,7 +1238,6 @@ button:focus-visible {
     margin-bottom: var(--spacing-md);
     background: white;
     border-radius: var(--radius-md);
-    overflow: hidden;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(95, 163, 208, 0.08);
     transition: all var(--transition-base);
@@ -1249,14 +1248,11 @@ button:focus-visible {
     border-color: var(--color-primary);
 }
 
-.faq-question {
-    width: 100%;
+.faq-item summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-lg);
-    background: none;
-    border: none;
     font-family: var(--font-family);
     font-size: var(--font-size-lg);
     font-weight: 600;
@@ -1264,9 +1260,19 @@ button:focus-visible {
     cursor: pointer;
     text-align: left;
     transition: all var(--transition-base);
+    list-style: none;
 }
 
-.faq-question:hover {
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    display: none;
+    content: '';
+}
+
+.faq-item summary:hover {
     color: var(--color-primary);
 }
 
@@ -1274,26 +1280,34 @@ button:focus-visible {
     font-size: var(--font-size-2xl);
     font-weight: 300;
     transition: transform var(--transition-base);
+    flex-shrink: 0;
+    margin-left: var(--spacing-md);
 }
 
-.faq-item.active .faq-icon {
+.faq-item[open] .faq-icon {
     transform: rotate(45deg);
 }
 
 .faq-answer {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-out;
     overflow: hidden;
-    transition: max-height var(--transition-slow);
 }
 
-.faq-item.active .faq-answer {
-    max-height: 500px;
+.faq-item[open] .faq-answer {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+    overflow: hidden;
 }
 
 .faq-answer p {
     padding: 0 var(--spacing-lg) var(--spacing-lg);
     color: var(--color-text-light);
     line-height: 1.7;
+    margin: 0;
 }
 
 /* ===== CTA SECTION ===== */
