@@ -11,97 +11,85 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="container">
             <div class="legal-content">
                 <h1>Politique de Confidentialité</h1>
-                <p class="legal-date">Dernière mise à jour : 14 octobre 2025</p>
+                <p class="legal-date">Dernière mise à jour : 15 juillet 2026</p>
 
                 <h2>1. Introduction</h2>
                 <p>Bienvenue sur BibleShot. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette politique de confidentialité vous informe sur la manière dont nous traitons vos données personnelles lorsque vous utilisez notre application mobile.</p>
 
-                <h2>2. Données que nous collectons</h2>
-                <h3>2.1 Données collectées automatiquement</h3>
-                <p>BibleShot est conçue pour minimiser la collecte de données. L'application stocke localement sur votre appareil :</p>
+                <h2>2. Données collectées</h2>
+                <p>BibleShot est conçue pour minimiser la collecte de données.</p>
+
+                <h3>2.1 Données stockées localement</h3>
                 <ul>
-                    <li>Vos préférences de thème visuel</li>
-                    <li>Vos statistiques de jeu (quiz joués, scores, séries)</li>
-                    <li>Vos shots favoris</li>
-                    <li>L'historique de vos quiz</li>
-                    <li>Vos paramètres de notifications</li>
+                    <li>Vos choix de parcours et de formulation</li>
+                    <li>Vos statistiques de jeu, scores et séries</li>
+                    <li>Vos shots favoris et votre historique de quiz</li>
+                    <li>Vos paramètres de notification</li>
                 </ul>
 
-                <h3>2.2 Données d'analyse anonymisées</h3>
-                <p>Pour améliorer l'application et comprendre comment elle est utilisée, nous collectons des données d'usage anonymisées via Mixpanel :</p>
+                <h3>2.2 Données d’utilisation traitées par Mixpanel</h3>
                 <ul>
-                    <li>Actions effectuées dans l'app (quiz joués, shots consultés, etc.)</li>
-                    <li>Informations techniques (version de l'app, modèle d'appareil, version iOS)</li>
-                    <li>Données de performance et de stabilité de l'application</li>
-                    <li>Un identifiant anonyme unique (non lié à votre identité personnelle)</li>
+                    <li>Un identifiant technique propre à votre installation</li>
+                    <li>Les écrans visités et les actions effectuées dans l’Application</li>
+                    <li>Des statistiques d’utilisation des fonctionnalités</li>
+                    <li>La version de l’Application, le modèle d’appareil et la version d’iOS</li>
+                    <li>Des données de performance et d’erreurs</li>
                 </ul>
+                <p>Cet identifiant n’est relié à aucune information vous identifiant directement, mais il persiste d’une session à l’autre. Ces données sont donc <strong>pseudonymisées, et non anonymes</strong> au sens du RGPD. Elles sont traitées par Mixpanel sur des serveurs situés dans l’Union européenne.</p>
 
-                <h3>2.3 Données que nous ne collectons PAS</h3>
+                <h3>2.3 Données d’attribution traitées par Tenjin</h3>
                 <ul>
-                    <li>Aucune donnée personnelle identifiable (nom, email, adresse)</li>
-                    <li>Aucune donnée de localisation précise</li>
-                    <li>Aucun contenu de vos réponses aux quiz</li>
-                    <li>Aucune information financière (gérée directement par Apple)</li>
+                    <li>Des identifiants techniques de l’appareil</li>
+                    <li>Les événements d’installation et de première ouverture</li>
+                    <li>L’identifiant publicitaire de l’appareil (IDFA), uniquement avec votre consentement</li>
+                </ul>
+                <p>Ces données servent à mesurer par quel canal vous avez découvert BibleShot et l’efficacité de nos campagnes de promotion.</p>
+
+                <h3>2.4 Données d’abonnement traitées par RevenueCat</h3>
+                <ul>
+                    <li>L’historique de vos achats et l’état de votre abonnement</li>
+                    <li>Un identifiant technique lié à votre installation</li>
+                </ul>
+                <p>Ces données sont nécessaires pour valider et restaurer votre abonnement.</p>
+
+                <h3>2.5 Données que nous ne collectons pas directement</h3>
+                <ul>
+                    <li>Votre nom, votre adresse email ou votre adresse postale</li>
+                    <li>Votre localisation précise</li>
+                    <li>Vos informations financières, qui sont gérées par Apple</li>
                 </ul>
 
                 <h2>3. Utilisation de vos données</h2>
-                <h3>3.1 Données locales</h3>
-                <p>Les données stockées localement sur votre appareil sont utilisées uniquement pour :</p>
+                <p>Les données locales servent à personnaliser votre expérience, sauvegarder votre progression et conserver vos favoris.</p>
+                <p>Les données pseudonymisées de Mixpanel servent à comprendre l’utilisation de l’Application, corriger les problèmes techniques et améliorer ses fonctionnalités. Les données de Tenjin servent uniquement à mesurer l’attribution de nos campagnes ; BibleShot n’affiche aucune publicité. Les données de RevenueCat servent à valider et restaurer votre abonnement.</p>
+                <p><strong>Aucune donnée n’est vendue, louée ni cédée à des courtiers en données.</strong></p>
+
+                <h2>4. Stockage et transferts</h2>
+                <p>Vos préférences, favoris, statistiques et historique de quiz sont stockés localement sur votre iPhone.</p>
+                <p>Les données pseudonymisées d’analyse sont transmises à Mixpanel et stockées sur ses serveurs situés dans l’Union européenne. Les données d’attribution (Tenjin) et d’abonnement (RevenueCat) peuvent être traitées hors de l’Union européenne sur la base de mécanismes de transfert conformes au RGPD, notamment les clauses contractuelles types de la Commission européenne.</p>
+
+                <h2>5. Prestataires</h2>
+                <p>Nous faisons appel à trois prestataires pour des finalités précises :</p>
                 <ul>
-                    <li>Personnaliser votre expérience (thème, notifications)</li>
-                    <li>Sauvegarder votre progression et vos statistiques</li>
-                    <li>Conserver vos shots favoris</li>
+                    <li><strong>Mixpanel</strong> — analyse d’utilisation pseudonymisée. <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener">Politique de confidentialité</a></li>
+                    <li><strong>Tenjin</strong> — mesure d’attribution des campagnes, avec IDFA uniquement après consentement. <a href="https://www.tenjin.com/privacy/" target="_blank" rel="noopener">Politique de confidentialité</a></li>
+                    <li><strong>RevenueCat</strong> — gestion des achats intégrés et des abonnements. <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">Politique de confidentialité</a></li>
                 </ul>
-                <p><strong>Ces données personnelles ne sont jamais transmises à nos serveurs.</strong></p>
+                <p>Vous pouvez également choisir de partager manuellement un shot via les outils de partage d’iOS.</p>
 
-                <h3>3.2 Données d'analyse (Mixpanel)</h3>
-                <p>Les données anonymisées collectées via Mixpanel sont utilisées pour :</p>
-                <ul>
-                    <li>Comprendre comment l'application est utilisée et améliorer l'expérience utilisateur</li>
-                    <li>Identifier et résoudre les problèmes techniques</li>
-                    <li>Mesurer l'engagement et les fonctionnalités les plus appréciées</li>
-                    <li>Optimiser les performances de l'application</li>
-                </ul>
-                <p>Ces données sont agrégées et anonymes. Elles ne permettent pas de vous identifier personnellement.</p>
-
-                <h2>4. Stockage et sécurité</h2>
-                <h3>4.1 Stockage local</h3>
-                <p>Vos données personnelles (préférences, statistiques, favoris) sont stockées localement sur votre iPhone via AsyncStorage (technologie sécurisée d'Apple). Ces données sont protégées par les mécanismes de sécurité natifs d'iOS.</p>
-
-                <h3>4.2 Données d'analyse</h3>
-                <p>Les données anonymisées sont transmises de manière sécurisée à Mixpanel via HTTPS. Mixpanel est certifié conforme au RGPD et respecte les normes internationales de protection des données. Pour plus d'informations : <a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener">Politique de confidentialité de Mixpanel</a>.</p>
-
-                <h2>5. Notifications</h2>
-                <p>Si vous activez les notifications :</p>
-                <ul>
-                    <li>Nous utilisons les services de notification d'Apple (APNs)</li>
-                    <li>Les notifications sont envoyées localement par votre appareil</li>
-                    <li>Aucun identifiant personnel n'est collecté</li>
-                    <li>Vous pouvez désactiver les notifications à tout moment dans les paramètres de l'app</li>
-                </ul>
-
-                <h2>6. Partage de données</h2>
-                <p>BibleShot partage uniquement des données anonymisées avec les partenaires suivants :</p>
-                <ul>
-                    <li><strong>Mixpanel</strong> : Service d'analyse qui reçoit des données d'usage anonymisées pour nous aider à améliorer l'application</li>
-                    <li><strong>Apple</strong> : Pour la gestion des achats et abonnements via l'App Store</li>
-                </ul>
-                <p><strong>Vos données personnelles (préférences, statistiques, favoris) ne sont jamais partagées avec des tiers.</strong> Seules des données d'usage anonymisées et agrégées sont transmises à Mixpanel.</p>
-
-                <p>Vous pouvez également choisir de partager manuellement des shots via les outils de partage iOS (Messages, réseaux sociaux, etc.).</p>
-
-                <h2>7. Vos droits</h2>
+                <h2>6. Vos droits</h2>
                 <p>Conformément au RGPD et aux lois sur la protection des données, vous avez le droit de :</p>
                 <ul>
                     <li><strong>Accéder</strong> à vos données : Toutes vos données locales sont visibles dans l'application</li>
                     <li><strong>Modifier</strong> vos données : Changez vos préférences dans les paramètres</li>
                     <li><strong>Supprimer</strong> vos données locales : Désinstallez l'application ou réinitialisez-la dans les paramètres</li>
-                    <li><strong>Refuser le tracking</strong> : Vous pouvez désactiver le suivi des données d'analyse dans les réglages iOS (Confidentialité > Suivi) ou nous contacter pour demander la suppression de vos données Mixpanel</li>
+                    <li><strong>Vous opposer</strong> à certains traitements et demander la suppression des données pseudonymisées vous concernant en nous contactant</li>
                     <li><strong>Portabilité</strong> : Vos données personnelles restent sur votre appareil</li>
                 </ul>
+                <p>Pour exercer ces droits, contactez-nous à <a href="mailto:contact@bibleshot.fr">contact@bibleshot.fr</a>. Vous pouvez également adresser une réclamation à la CNIL.</p>
 
-                <h2>8. Conservation des données</h2>
-                <h3>8.1 Données locales</h3>
+                <h2>7. Conservation des données</h2>
+                <h3>7.1 Données locales</h3>
                 <p>Vos données personnelles sont conservées localement sur votre appareil jusqu'à ce que vous :</p>
                 <ul>
                     <li>Supprimiez l'application</li>
@@ -109,38 +97,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <li>Réinitialisiez votre appareil</li>
                 </ul>
 
-                <h3>8.2 Données d'analyse</h3>
-                <p>Les données anonymisées collectées par Mixpanel sont conservées conformément à leur politique de rétention (généralement 5 ans maximum). Vous pouvez demander la suppression de ces données en nous contactant.</p>
+                <h3>7.2 Données traitées par les prestataires</h3>
+                <p>Les données traitées par Mixpanel, Tenjin et RevenueCat sont conservées conformément à leurs politiques respectives. Vous pouvez nous contacter pour exercer vos droits sur ces données.</p>
 
-                <h2>9. Données des mineurs</h2>
-                <p>BibleShot est accessible à tous les âges (classification 4+). Nous ne collectons aucune donnée personnelle identifiable. Les seules données collectées sont des informations d'usage anonymisées qui ne permettent pas d'identifier les utilisateurs, y compris les mineurs.</p>
+                <h2>8. Données des mineurs</h2>
+                <p>BibleShot est classée 4+ sur l’App Store. Nous ne demandons ni nom, ni email, ni date de naissance. Les mineurs doivent obtenir le consentement de leur représentant légal avant tout achat.</p>
 
-                <h2>10. Cookies et technologies de suivi</h2>
-                <p>L'application mobile <strong>n'utilise aucun cookie</strong> car elle ne fonctionne pas dans un navigateur web.</p>
+                <h2>9. Technologies de suivi</h2>
+                <p>BibleShot utilise AsyncStorage pour les données locales, Mixpanel pour l’analyse d’utilisation pseudonymisée, Tenjin pour l’attribution des campagnes et RevenueCat pour les achats intégrés. Aucun cookie web n’est utilisé.</p>
+                <p>Au premier lancement, iOS peut vous demander si vous autorisez BibleShot à vous suivre. Ce choix concerne l’IDFA utilisé par Tenjin. Si vous refusez, l’IDFA n’est pas collecté et l’attribution se limite aux données agrégées fournies par Apple. Aucune fonctionnalité de l’Application ne dépend de ce consentement.</p>
+                <p>Vous pouvez modifier ce choix dans Réglages → Confidentialité et sécurité → Suivi.</p>
 
-                <p>Nous utilisons <strong>Mixpanel</strong> comme service d'analyse pour collecter des données d'usage anonymisées. Mixpanel utilise un identifiant unique anonyme pour suivre les événements dans l'application, mais cet identifiant n'est pas lié à votre identité personnelle.</p>
-
-                <p>Vous pouvez contrôler le suivi des données d'analyse :</p>
-                <ul>
-                    <li>Via les réglages iOS : Réglages > Confidentialité > Suivi</li>
-                    <li>En nous contactant pour demander l'opt-out complet de Mixpanel</li>
-                </ul>
-
-                <h2>11. Modifications de cette politique</h2>
+                <h2>10. Modifications de cette politique</h2>
                 <p>Nous pouvons mettre à jour cette politique de confidentialité occasionnellement. En cas de modification importante, nous vous en informerons via une mise à jour de l'application. La date de "dernière mise à jour" en haut de cette page sera modifiée.</p>
 
-                <h2>12. Contact</h2>
+                <h2>11. Contact</h2>
                 <p>Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter :</p>
                 <ul>
                     <li>Email : <a href="mailto:contact@bibleshot.fr">contact@bibleshot.fr</a></li>
                     <li>Via le formulaire de contact : <a href="/support">Page de support</a></li>
                 </ul>
 
-                <h2>13. Conformité RGPD</h2>
+                <h2>12. Conformité RGPD</h2>
                 <p>BibleShot respecte le Règlement Général sur la Protection des Données (RGPD) :</p>
                 <ul>
                     <li><strong>Minimisation des données</strong> : Nous collectons uniquement les données strictement nécessaires à l'amélioration de l'application</li>
-                    <li><strong>Anonymisation</strong> : Les données d'analyse sont anonymisées et ne permettent pas de vous identifier</li>
+                    <li><strong>Pseudonymisation</strong> : Les données d’analyse ne sont pas reliées directement à votre identité</li>
                     <li><strong>Consentement</strong> : Vous êtes informé de la collecte de données et pouvez refuser le tracking</li>
                     <li><strong>Transparence</strong> : Cette politique explique clairement nos pratiques de collecte et d'utilisation des données</li>
                     <li><strong>Sécurité</strong> : Vos données personnelles sont protégées par iOS, les données d'analyse sont transmises via HTTPS</li>
@@ -148,14 +130,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <li><strong>Portabilité</strong> : Vos données personnelles restent sur votre appareil</li>
                 </ul>
 
-                <h3>13.1 Base légale du traitement</h3>
+                <h3>12.1 Base légale du traitement</h3>
                 <ul>
                     <li><strong>Données locales</strong> : Nécessaires à l'exécution du contrat (fourniture du service)</li>
                     <li><strong>Données d'analyse</strong> : Intérêt légitime à améliorer notre service, avec possibilité d'opposition</li>
                 </ul>
 
                 <div class="legal-footer">
-                    <p><strong>En résumé :</strong> BibleShot collecte uniquement des données d'usage anonymisées via Mixpanel pour améliorer l'application. Aucune donnée personnelle identifiable n'est collectée. Toutes vos informations personnelles (préférences, statistiques, favoris) restent sur votre iPhone et ne sont jamais transmises à nos serveurs.</p>
+                    <p><strong>En résumé :</strong> votre progression, vos favoris et vos préférences restent sur votre iPhone. BibleShot utilise aussi des données pseudonymisées ou techniques via Mixpanel, Tenjin et RevenueCat pour améliorer l’Application, mesurer ses campagnes et gérer les abonnements.</p>
                 </div>
             </div>
         </div>

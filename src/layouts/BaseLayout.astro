@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title, description, isLegalPage = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, 'https://bibleshot.fr');
 ---
 
 <!DOCTYPE html>
@@ -20,9 +21,23 @@ const { title, description, isLegalPage = false } = Astro.props;
     <meta name="description" content={description}>
     <meta name="keywords" content="bible, versets, quotidien, inspiration, quiz, chrétien, dévotion, spiritualité, foi, parole">
     <title>{title}</title>
+    <link rel="canonical" href={canonicalURL}>
+    <link rel="icon" href="/assets/images/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/icon.png">
+    <meta name="theme-color" content="#F8FBFC">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BibleShot">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:image" content="https://bibleshot.fr/assets/images/icon.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
 </head>
 <body>
     <Navbar isLegalPage={isLegalPage} />
@@ -32,11 +47,13 @@ const { title, description, isLegalPage = false } = Astro.props;
     <Footer />
 
     <script>
-        // ===== HERO CAROUSEL AUTO-SLIDE =====
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // ===== HERO CAROUSEL =====
         function initHeroCarousel() {
             const slides = document.querySelectorAll('.hero-carousel-slide');
             const dots = document.querySelectorAll('.hero-carousel-dot');
-            const wrapper = document.querySelector('.hero-carousel-wrapper');
+            const wrapper = document.querySelector<HTMLElement>('.hero-carousel-wrapper');
 
             if (slides.length === 0) return;
 
@@ -73,6 +90,8 @@ const { title, description, isLegalPage = false } = Astro.props;
             }
 
             function startAutoSlide() {
+                // Pas de défilement automatique si l'utilisateur préfère limiter les animations
+                if (prefersReducedMotion) return;
                 autoSlideInterval = setInterval(nextSlide, 3500);
             }
 
@@ -80,325 +99,106 @@ const { title, description, isLegalPage = false } = Astro.props;
                 clearInterval(autoSlideInterval);
             }
 
-            function resetAutoSlide() {
-                stopAutoSlide();
-                startAutoSlide();
-            }
-
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     goToSlide(index);
-                    resetAutoSlide();
+                    stopAutoSlide();
+                    startAutoSlide();
                 });
             });
 
             if (wrapper) {
                 wrapper.addEventListener('mouseenter', stopAutoSlide);
                 wrapper.addEventListener('mouseleave', startAutoSlide);
-            }
 
-            let touchStartX = 0;
-            let touchEndX = 0;
+                let touchStartX = 0;
 
-            if (wrapper) {
                 wrapper.addEventListener('touchstart', (e: TouchEvent) => {
                     touchStartX = e.changedTouches[0].screenX;
                     stopAutoSlide();
-                });
+                }, { passive: true });
 
                 wrapper.addEventListener('touchend', (e: TouchEvent) => {
-                    touchEndX = e.changedTouches[0].screenX;
+                    const touchEndX = e.changedTouches[0].screenX;
                     if (touchStartX - touchEndX > 50) {
                         nextSlide();
+                    } else if (touchEndX - touchStartX > 50) {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        updateSlides();
                     }
                     startAutoSlide();
-                });
+                }, { passive: true });
             }
 
             updateSlides();
             startAutoSlide();
         }
 
-        // ===== SMOOTH SCROLL =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = (this as HTMLAnchorElement).getAttribute('href');
+        // ===== NAVBAR : OMBRE AU DÉFILEMENT =====
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            if (!navbar) return;
 
-                if (!href || href === '#' || !href.startsWith('#')) return;
-
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-
-                if (targetElement) {
-                    const navbar = document.querySelector('.navbar');
-                    const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 0;
-                    const targetPosition = (targetElement as HTMLElement).offsetTop - navbarHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // ===== NAVBAR SCROLL EFFECT =====
-        const navbar = document.querySelector('.navbar');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (navbar) {
-                if (currentScroll > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            }
-        });
-
-        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target as HTMLElement;
-                    target.style.opacity = '0';
-                    target.style.transform = 'translateY(30px)';
-
-                    setTimeout(() => {
-                        target.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                        target.style.opacity = '1';
-                        target.style.transform = 'translateY(0)';
-                    }, 100);
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        const animateElements = document.querySelectorAll(
-            '.shot-card, .feature-card, .theme-card, .why-item, .difficulty-item'
-        );
-
-        animateElements.forEach(el => {
-            observer.observe(el);
-        });
-
-        // ===== THEME CARDS INTERACTION =====
-        function initThemeCards() {
-            const themeCards = document.querySelectorAll('.theme-card-new');
-            const themesSection = document.querySelector('.themes') as HTMLElement | null;
-
-            const themeColors: Record<string, { background: string; border: string; textColor?: string; subtitleColor?: string }> = {
-                'classique': {
-                    background: 'linear-gradient(135deg, #E8EEF2 0%, #EDF3F7 50%, #E3EBF0 100%)',
-                    border: 'rgba(95, 163, 208, 0.2)'
-                },
-                'sombre': {
-                    background: 'linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #0D0D0D 100%)',
-                    border: 'rgba(255, 255, 255, 0.1)',
-                    textColor: '#FFFFFF',
-                    subtitleColor: 'rgba(255, 255, 255, 0.7)'
-                },
-                'nord': {
-                    background: 'linear-gradient(135deg, #3D4F5C 0%, #475663 50%, #384650 100%)',
-                    border: 'rgba(139, 186, 211, 0.3)',
-                    textColor: '#FFFFFF',
-                    subtitleColor: 'rgba(255, 255, 255, 0.7)'
-                },
-                'ocean': {
-                    background: 'linear-gradient(135deg, #DDE9EE 0%, #E2EEF3 50%, #D8E5EB 100%)',
-                    border: 'rgba(69, 143, 168, 0.25)'
-                },
-                'foret': {
-                    background: 'linear-gradient(135deg, #EBE9E3 0%, #F0EEE8 50%, #E6E4DE 100%)',
-                    border: 'rgba(92, 132, 101, 0.25)'
-                },
-                'lavande': {
-                    background: 'linear-gradient(135deg, #EDE8F0 0%, #F2EDF5 50%, #E9E4EC 100%)',
-                    border: 'rgba(145, 119, 161, 0.25)'
-                },
-                'aurore': {
-                    background: 'linear-gradient(135deg, #F7EDE8 0%, #FCF2ED 50%, #F2E8E3 100%)',
-                    border: 'rgba(218, 143, 143, 0.25)'
-                }
+            const onScroll = () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
             };
 
-            themeCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    themeCards.forEach(c => c.classList.remove('active-theme'));
-                    card.classList.add('active-theme');
-
-                    const themeNameEl = card.querySelector('.theme-name');
-                    if (!themeNameEl) return;
-
-                    const themeName = themeNameEl.textContent?.toLowerCase()
-                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') || '';
-                    const themeData = themeColors[themeName];
-
-                    if (themeData && themesSection) {
-                        themesSection.style.transition = 'all 0.6s ease';
-                        themesSection.style.background = themeData.background;
-                        themesSection.style.borderTopColor = themeData.border;
-                        themesSection.style.borderBottomColor = themeData.border;
-
-                        const sectionTitle = themesSection.querySelector('.section-title') as HTMLElement | null;
-                        const sectionSubtitle = themesSection.querySelector('.section-subtitle') as HTMLElement | null;
-
-                        if (themeData.textColor) {
-                            if (sectionTitle) sectionTitle.style.color = themeData.textColor;
-                            if (sectionSubtitle) sectionSubtitle.style.color = themeData.subtitleColor || '';
-                        } else {
-                            if (sectionTitle) sectionTitle.style.color = '';
-                            if (sectionSubtitle) sectionSubtitle.style.color = '';
-                        }
-                    }
-
-                    const screenshot = card.querySelector('.theme-screenshot') as HTMLElement | null;
-                    if (screenshot) {
-                        screenshot.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            screenshot.style.transform = 'scale(1)';
-                        }, 150);
-                    }
-
-                    showToast(`Thème ${themeNameEl.textContent} appliqué`);
-                });
-            });
-
-            if (themesSection) {
-                const classiqueTheme = themeColors['classique'];
-                themesSection.style.background = classiqueTheme.background;
-                themesSection.style.borderTopColor = classiqueTheme.border;
-                themesSection.style.borderBottomColor = classiqueTheme.border;
-            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
         }
 
-        // ===== TOAST NOTIFICATION =====
-        function showToast(message: string) {
-            const existingToast = document.querySelector('.toast');
-            if (existingToast) {
-                existingToast.remove();
-            }
-
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.textContent = message;
-
-            Object.assign(toast.style, {
-                position: 'fixed',
-                bottom: '30px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: 'rgba(29, 29, 31, 0.95)',
-                color: 'white',
-                padding: '12px 24px',
-                borderRadius: '8px',
-                fontSize: '14px',
-                fontWeight: '600',
-                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)',
-                zIndex: '10000',
-                opacity: '0',
-                transition: 'opacity 0.3s ease',
-                backdropFilter: 'blur(10px)'
-            });
-
-            document.body.appendChild(toast);
-
-            setTimeout(() => {
-                toast.style.opacity = '1';
-            }, 10);
-
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => {
-                    toast.remove();
-                }, 300);
-            }, 2000);
-        }
-
-        // ===== MOBILE MENU =====
+        // ===== MENU MOBILE =====
         function initMobileMenu() {
             const burger = document.querySelector('.burger-menu');
-            const nav = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
+            const nav = document.querySelector('#nav-links');
+            const navLinks = nav?.querySelectorAll('.nav-link') ?? [];
 
-            if (burger && nav) {
-                burger.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    nav.classList.toggle('active');
-                    burger.classList.toggle('active');
-                    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-                });
+            if (!burger || !nav) return;
 
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        nav.classList.remove('active');
-                        burger.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!burger.contains(e.target as Node) && !nav.contains(e.target as Node) && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        burger.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
+            function setMenu(open: boolean) {
+                nav!.classList.toggle('active', open);
+                burger!.classList.toggle('active', open);
+                burger!.setAttribute('aria-expanded', String(open));
+                document.body.style.overflow = open ? 'hidden' : '';
             }
+
+            burger.setAttribute('aria-expanded', 'false');
+
+            burger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setMenu(!nav.classList.contains('active'));
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => setMenu(false));
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!burger.contains(e.target as Node) && !nav.contains(e.target as Node) && nav.classList.contains('active')) {
+                    setMenu(false);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && nav.classList.contains('active')) {
+                    setMenu(false);
+                }
+            });
         }
 
-        // ===== PAGE LOAD ANIMATIONS =====
-        window.addEventListener('load', () => {
-            const heroText = document.querySelector('.hero-text') as HTMLElement | null;
-            const heroImage = document.querySelector('.hero-image') as HTMLElement | null;
-
-            if (heroText) {
-                heroText.style.opacity = '0';
-                heroText.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    heroText.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                    heroText.style.opacity = '1';
-                    heroText.style.transform = 'translateY(0)';
-                }, 100);
-            }
-
-            if (heroImage) {
-                heroImage.style.opacity = '0';
-                heroImage.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    heroImage.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                    heroImage.style.opacity = '1';
-                    heroImage.style.transform = 'translateY(0)';
-                }, 300);
-            }
-        });
-
-        // ===== ACTIVE MENU ON SCROLL =====
+        // ===== LIEN ACTIF DANS LE MENU =====
         function initActiveMenu() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -70% 0px',
-                threshold: 0
-            };
+            if (sections.length === 0 || navLinks.length === 0) return;
 
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const sectionId = entry.target.getAttribute('id');
 
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                        });
+                        navLinks.forEach(link => link.classList.remove('active'));
 
                         const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
                         if (activeLink) {
@@ -406,14 +206,15 @@ const { title, description, isLegalPage = false } = Astro.props;
                         }
                     }
                 });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                sectionObserver.observe(section);
+            }, {
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
             });
+
+            sections.forEach(section => sectionObserver.observe(section));
         }
 
-        // ===== FAQ ANIMATED CLOSE =====
+        // ===== FERMETURE ANIMÉE DE LA FAQ =====
         function initFaqAnimation() {
             const faqItems = document.querySelectorAll('.faq-item');
 
@@ -429,27 +230,18 @@ const { title, description, isLegalPage = false } = Astro.props;
                         setTimeout(() => {
                             details.removeAttribute('open');
                             details.classList.remove('closing');
-                        }, 400);
+                        }, prefersReducedMotion ? 0 : 400);
                     }
                 });
             });
         }
 
-        // ===== CONSOLE MESSAGE =====
-        console.log('%c🙏 BibleShot - Un shot de Parole vivante chaque jour',
-            'font-size: 16px; font-weight: bold; color: #5FA3D0;');
-        console.log('%cDéveloppé avec ❤️ pour nourrir ta foi quotidiennement',
-            'font-size: 12px; color: #7BC67E;');
-
-        // ===== INITIALIZE =====
         document.addEventListener('DOMContentLoaded', () => {
             initMobileMenu();
+            initNavbarScroll();
             initHeroCarousel();
             initActiveMenu();
-            initThemeCards();
             initFaqAnimation();
-
-            document.body.classList.add('loaded');
         });
     </script>
 </body>

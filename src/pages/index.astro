@@ -1,449 +1,205 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const appStoreUrl = 'https://apps.apple.com/fr/app/bibleshot-un-shot-un-quiz/id6753938756';
 ---
 
 <BaseLayout
-  title="BibleShot - Un shot de Parole vivante chaque jour"
-  description="BibleShot - Découvre chaque jour un shot biblique inspirant et défie-toi avec des quiz pour approfondir ta connaissance de la Parole."
+  title="BibleShot — Une parole pour commencer ta journée"
+  description="Chaque matin, découvre un encouragement inspiré de la Bible, retrouve le verset avec un quiz et fais grandir ta foi, un jour après l’autre."
 >
-    <!-- Hero Section -->
+  <main class="landing">
     <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge-top">
-                        <span class="hero-badge-icon">📱</span>
-                        <span>Nouveau sur iOS</span>
-                    </div>
-
-                    <h1 class="hero-title">La Parole qui transforme ta journée</h1>
-
-                    <p class="hero-description">
-                        Chaque matin, reçois un <strong>shot biblique</strong> puissant : une déclaration de foi inspirée des Écritures.
-                        Médite, apprends et grandis avec des quiz interactifs adaptés à ton niveau.
-                    </p>
-
-                    <div class="hero-features-list">
-                        <div class="hero-feature-item">
-                            <span class="hero-feature-check">✓</span>
-                            <span>Un shot quotidien personnalisé</span>
-                        </div>
-                        <div class="hero-feature-item">
-                            <span class="hero-feature-check">✓</span>
-                            <span>Quiz biblique à 3 niveaux</span>
-                        </div>
-                        <div class="hero-feature-item">
-                            <span class="hero-feature-check">✓</span>
-                            <span>7 thèmes visuels uniques</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-cta">
-                        <a href="https://apps.apple.com/fr/app/bibleshot-un-shot-un-quiz/id6753938756" class="app-store-badge-hero" aria-label="Télécharger sur l'App Store">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&releaseDate=1234569600" alt="Télécharger dans l'App Store">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <div class="hero-carousel-wrapper">
-                        <div class="hero-carousel-container">
-                            <div class="hero-carousel-track">
-                                <div class="hero-carousel-slide active">
-                                    <img src="/assets/screenshots/01.png" alt="Shot quotidien avec calendrier">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/02.png" alt="Avec un shot inspiré de la Bible">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/03.png" alt="Quiz du jour">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/04.png" alt="3 niveaux de difficulté">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/05.png" alt="Trouve la bonne réponse">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/06.png" alt="Reçois ta récompense">
-                                </div>
-                                <div class="hero-carousel-slide">
-                                    <img src="/assets/screenshots/07.png" alt="Statistiques détaillées">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hero-carousel-dots">
-                            <button class="hero-carousel-dot active" data-slide="0" aria-label="Aller à la slide 1"></button>
-                            <button class="hero-carousel-dot" data-slide="1" aria-label="Aller à la slide 2"></button>
-                            <button class="hero-carousel-dot" data-slide="2" aria-label="Aller à la slide 3"></button>
-                            <button class="hero-carousel-dot" data-slide="3" aria-label="Aller à la slide 4"></button>
-                            <button class="hero-carousel-dot" data-slide="4" aria-label="Aller à la slide 5"></button>
-                            <button class="hero-carousel-dot" data-slide="5" aria-label="Aller à la slide 6"></button>
-                            <button class="hero-carousel-dot" data-slide="6" aria-label="Aller à la slide 7"></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Le rituel biblique quotidien</p>
+          <h1>Avant le bruit du monde,<br><em>une parole pour toi.</em></h1>
+          <p class="hero-lead">
+            Un encouragement inspiré de la Bible, un quiz pour retrouver le verset,
+            et une foi qui grandit — en quelques minutes par jour.
+          </p>
+          <div class="hero-actions">
+            <a class="store-button store-button--large" href={appStoreUrl} aria-label="Télécharger BibleShot sur l’App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.34-.07 2.27.74 3.05.8 1.17-.24 2.29-.93 3.54-.84 1.5.12 2.63.71 3.38 1.8-3.09 1.85-2.36 5.92.48 7.06-.57 1.5-1.31 2.99-2.45 4.16zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              <span><small>Télécharger sur</small><strong>l’App Store</strong></span>
+            </a>
+            <a class="text-link" href="#rituel">Voir comment ça marche <span>↓</span></a>
+          </div>
+          <div class="hero-proof" aria-label="Informations sur l’application">
+            <div><strong>365</strong><span>jours de Parole</span></div>
+            <i></i>
+            <div><strong>3 min</strong><span>pour se recentrer</span></div>
+            <i></i>
+            <div><strong>0 pub</strong><span>juste l’essentiel</span></div>
+          </div>
         </div>
+
+        <div class="hero-stage" aria-label="Aperçu de l’application BibleShot">
+          <div class="sun-orbit" aria-hidden="true"><span>BIBLESHOT · CHAQUE JOUR ·</span></div>
+          <div class="hero-phone">
+            <img src="/assets/screenshots/optimized/01.webp" alt="Le shot biblique du jour dans l’application BibleShot" width="1284" height="2778" fetchpriority="high">
+          </div>
+          <div class="floating-note floating-note--top">
+            <span class="note-icon">✦</span>
+            <span><small>Aujourd’hui</small><strong>Une vérité à garder</strong></span>
+          </div>
+          <div class="floating-note floating-note--bottom">
+            <span class="streak">7</span>
+            <span><small>jours de suite</small><strong>Ton rythme s’installe</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div>Lire <span>✦</span> Jouer <span>✦</span> Comprendre <span>✦</span> Grandir <span>✦</span> Lire <span>✦</span> Jouer <span>✦</span> Comprendre <span>✦</span> Grandir <span>✦</span></div>
+      </div>
     </section>
 
-    <!-- Concept Section -->
-    <section class="concept" id="concept">
-        <div class="container">
-            <div class="concept-content">
-                <div class="concept-text">
-                    <h2 class="concept-title">Qu'est-ce qu'un shot biblique ?</h2>
-                    <p class="concept-description">Une déclaration de foi courte et puissante, inspirée des Écritures. En une phrase, transforme ta journée avec la vérité de Dieu.</p>
-
-                    <div class="concept-features">
-                        <div class="concept-feature-item">
-                            <div class="concept-feature-icon">📖</div>
-                            <div class="concept-feature-content">
-                                <h3 class="concept-feature-title">Court et mémorable</h3>
-                                <p class="concept-feature-desc">Messages concis, faciles à retenir</p>
-                            </div>
-                        </div>
-                        <div class="concept-feature-item">
-                            <div class="concept-feature-icon">💭</div>
-                            <div class="concept-feature-content">
-                                <h3 class="concept-feature-title">À la première personne</h3>
-                                <p class="concept-feature-desc">Renforce ton identité en Christ</p>
-                            </div>
-                        </div>
-                        <div class="concept-feature-item">
-                            <div class="concept-feature-icon">✨</div>
-                            <div class="concept-feature-content">
-                                <h3 class="concept-feature-title">Fondé sur la Bible</h3>
-                                <p class="concept-feature-desc">Ancré dans un verset authentique</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="concept-visual">
-                    <div class="concept-screenshot">
-                        <img src="/assets/screenshots/acceuil.png" alt="Écran d'accueil BibleShot avec shot quotidien">
-                    </div>
-                </div>
-            </div>
+    <section class="ritual" id="rituel">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> Un petit rituel, un vrai impact</p>
+          <h2>Ta Bible n’a jamais été<br><em>aussi proche de toi.</em></h2>
+          <p>Pas de programme impossible à tenir. BibleShot crée un rendez-vous simple, pensé pour revenir à la Parole chaque jour.</p>
         </div>
+
+        <div class="ritual-grid">
+          <article class="ritual-card ritual-card--orange">
+            <div class="ritual-copy">
+              <span class="step">01 — Reçois</span>
+              <h3>Commence avec une vérité qui te parle.</h3>
+              <p>Une déclaration courte, inspirée d’un verset authentique, à lire et à garder en tête.</p>
+            </div>
+            <img src="/assets/screenshots/optimized/01.webp" alt="Écran du shot quotidien BibleShot" width="1284" height="2778" loading="lazy">
+          </article>
+
+          <article class="ritual-card ritual-card--blue">
+            <div class="ritual-copy">
+              <span class="step">02 — Cherche</span>
+              <h3>Transforme ta lecture en jeu.</h3>
+              <p>Retrouve le livre ou la référence à ton niveau. Ici, chaque réponse te fait avancer.</p>
+            </div>
+            <img src="/assets/screenshots/optimized/02.webp" alt="Quiz biblique à choix multiple dans BibleShot" width="1284" height="2778" loading="lazy">
+          </article>
+
+          <article class="ritual-card ritual-card--violet">
+            <div class="ritual-copy">
+              <span class="step">03 — Comprends</span>
+              <h3>Découvre le passage derrière le shot.</h3>
+              <p>Lis le verset complet et ancre progressivement les mots, les livres et les histoires.</p>
+            </div>
+            <img src="/assets/screenshots/optimized/03.webp" alt="Révélation du verset après le quiz BibleShot" width="1284" height="2778" loading="lazy">
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="features-content">
-                <div class="features-text">
-                    <h2 class="features-title">Des outils pour grandir chaque jour</h2>
-                    <p class="features-description">Découvre les fonctionnalités pensées pour transformer ta routine spirituelle et approfondir ta connaissance biblique.</p>
-
-                    <div class="features-list-compact">
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">📅</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">Shot quotidien</h3>
-                                <p class="feature-compact-desc">Nouveau shot biblique chaque jour à minuit</p>
-                            </div>
-                        </div>
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">🎮</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">Quiz interactif</h3>
-                                <p class="feature-compact-desc">3 niveaux de difficulté pour tester tes connaissances</p>
-                            </div>
-                        </div>
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">📊</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">Statistiques</h3>
-                                <p class="feature-compact-desc">Suis ta progression et tes performances</p>
-                            </div>
-                        </div>
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">❤️</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">Favoris</h3>
-                                <p class="feature-compact-desc">Sauvegarde les shots qui te parlent le plus</p>
-                            </div>
-                        </div>
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">🎨</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">7 Thèmes visuels</h3>
-                                <p class="feature-compact-desc">Personnalise l'interface selon ton style</p>
-                            </div>
-                        </div>
-                        <div class="feature-compact-item">
-                            <div class="feature-compact-icon">🔔</div>
-                            <div class="feature-compact-content">
-                                <h3 class="feature-compact-title">Notifications</h3>
-                                <p class="feature-compact-desc">Rappels personnalisables à l'heure de ton choix</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="features-visual">
-                    <div class="features-screenshot">
-                        <img src="/assets/screenshots/03.png" alt="Quiz quotidien BibleShot">
-                    </div>
-                </div>
-            </div>
+    <section class="widget-story" id="widget">
+      <div class="container">
+        <div class="widget-panel">
+          <div class="widget-copy">
+            <p class="eyebrow eyebrow--light"><span></span> Même sans ouvrir l’app</p>
+            <h2>La Parole te retrouve au premier regard.</h2>
+            <p>Ajoute le widget BibleShot à ton écran de verrouillage. Ton encouragement se renouvelle chaque jour, tout simplement.</p>
+            <ul>
+              <li><span>✓</span> Écran verrouillé et écran d’accueil</li>
+              <li><span>✓</span> Mise à jour automatique à minuit</li>
+              <li><span>✓</span> Toujours discret, jamais envahissant</li>
+            </ul>
+            <a class="store-button store-button--light" href={appStoreUrl} aria-label="Essayer BibleShot sur iPhone">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.34-.07 2.27.74 3.05.8 1.17-.24 2.29-.93 3.54-.84 1.5.12 2.63.71 3.38 1.8-3.09 1.85-2.36 5.92.48 7.06-.57 1.5-1.31 2.99-2.45 4.16zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              <span><small>Disponible sur</small><strong>l’App Store</strong></span>
+            </a>
+          </div>
+          <div class="widget-visual">
+            <div class="widget-rays" aria-hidden="true"></div>
+            <img src="/assets/screenshots/optimized/04.webp" alt="Widget BibleShot sur l’écran de verrouillage d’un iPhone" width="1284" height="2778" loading="lazy">
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Quiz Section -->
-    <section class="quiz-section" id="quiz">
-        <div class="container">
-            <div class="quiz-content">
-                <div class="quiz-text">
-                    <h2 class="quiz-title">Apprends en t'amusant</h2>
-                    <p class="quiz-description">Chaque jour, un quiz pour tester ta connaissance biblique. Retrouve le verset qui a inspiré le shot quotidien et collectionne des points.</p>
-
-                    <div class="quiz-features">
-                        <div class="quiz-feature-item">
-                            <div class="quiz-feature-icon">🎯</div>
-                            <div class="quiz-feature-content">
-                                <h3 class="quiz-feature-title">Un quiz par jour</h3>
-                                <p class="quiz-feature-desc">Une tentative unique pour retrouver le bon verset</p>
-                            </div>
-                        </div>
-                        <div class="quiz-feature-item">
-                            <div class="quiz-feature-icon">🎮</div>
-                            <div class="quiz-feature-content">
-                                <h3 class="quiz-feature-title">3 niveaux de difficulté</h3>
-                                <p class="quiz-feature-desc">Choisis ton défi et gagne jusqu'à 100 points</p>
-                            </div>
-                        </div>
-                        <div class="quiz-feature-item">
-                            <div class="quiz-feature-icon">🏆</div>
-                            <div class="quiz-feature-content">
-                                <h3 class="quiz-feature-title">Récompenses motivantes</h3>
-                                <p class="quiz-feature-desc">Suis ta progression et célèbre tes réussites</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quiz-visual">
-                    <div class="quiz-screenshot">
-                        <img src="/assets/screenshots/05.png" alt="Quiz quotidien BibleShot">
-                    </div>
-                </div>
-            </div>
+    <section class="made-to-last" id="fonctionnalites">
+      <div class="container feature-layout">
+        <div class="favorites-visual">
+          <div class="favorites-card">
+            <img src="/assets/screenshots/optimized/05.webp" alt="Collection des versets favoris dans BibleShot" width="1284" height="2778" loading="lazy">
+          </div>
+          <div class="saved-stamp" aria-hidden="true">♥<br><small>À relire</small></div>
         </div>
+        <div class="feature-copy">
+          <p class="eyebrow"><span></span> Pensée pour durer</p>
+          <h2>Plus qu’une app.<br><em>Une habitude qui reste.</em></h2>
+          <p class="feature-intro">BibleShot t’aide à avancer sans comparaison et sans pression. Seulement toi, ton rythme et la Parole.</p>
+          <div class="feature-list">
+            <article>
+              <span class="feature-icon">♥</span>
+              <div><h3>Garde ce qui te fortifie</h3><p>Ajoute tes shots aux favoris et retrouve-les quand tu en as besoin.</p></div>
+            </article>
+            <article>
+              <span class="feature-icon">↗</span>
+              <div><h3>Vois le chemin parcouru</h3><p>Séries, jalons et statistiques rendent tes progrès visibles, sans classement.</p></div>
+            </article>
+            <article>
+              <span class="feature-icon">◐</span>
+              <div><h3>Fais-la vraiment tienne</h3><p>Niveau, rappels, formulation et ambiance s’adaptent à ton quotidien.</p></div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Themes Section -->
-    <section class="themes" id="themes">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">7 thèmes pour ton style</h2>
-                <p class="section-subtitle">Personnalise ton expérience avec des thèmes soigneusement designés</p>
-            </div>
-            <div class="themes-grid">
-                <div class="theme-card-new active-theme">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/01_classique.PNG" alt="Thème Classique">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Classique</h4>
-                        <p class="theme-desc">Clair et épuré</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/02_sombre.PNG" alt="Thème Sombre">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Sombre</h4>
-                        <p class="theme-desc">Pour la nuit</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/03_nord.PNG" alt="Thème Nord">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Nord</h4>
-                        <p class="theme-desc">Froid et apaisant</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/04_ocean.PNG" alt="Thème Océan">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Océan</h4>
-                        <p class="theme-desc">Calme et profond</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/05_foret.PNG" alt="Thème Forêt">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Forêt</h4>
-                        <p class="theme-desc">Nature ressourçante</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/06_lavande.PNG" alt="Thème Lavande">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Lavande</h4>
-                        <p class="theme-desc">Doux et relaxant</p>
-                    </div>
-                </div>
-                <div class="theme-card-new">
-                    <div class="theme-screenshot">
-                        <img src="/assets/screenshots/themes/07_aurore.PNG" alt="Thème Aurore">
-                    </div>
-                    <div class="theme-info">
-                        <h4 class="theme-name">Aurore</h4>
-                        <p class="theme-desc">Chaleureux et lumineux</p>
-                    </div>
-                </div>
-            </div>
+    <section class="manifesto">
+      <div class="container">
+        <p>Une seule tentative par jour.</p>
+        <h2>Parce que la foi n’est pas une course.</h2>
+        <div class="manifesto-tags">
+          <span>Sans publicité</span><span>Sans classement</span><span>Données en local</span><span>Version Segond 21</span>
         </div>
+      </div>
     </section>
 
-    <!-- Why Section -->
-    <section class="why-section" id="why-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Pourquoi BibleShot ?</h2>
-                <p class="section-subtitle">Une application qui respecte ton temps et ta foi</p>
-            </div>
-            <div class="why-card">
-                <ul class="why-list">
-                    <li class="why-list-item">
-                        <svg class="why-check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <div class="why-list-content">
-                            <strong>Format Court :</strong> Des messages percutants, faciles à mémoriser et à appliquer dans ta vie quotidienne.
-                        </div>
-                    </li>
-                    <li class="why-list-item">
-                        <svg class="why-check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <div class="why-list-content">
-                            <strong>Gamification Intelligente :</strong> Progression visible sans pression sociale. Pas de classements, juste toi et ta croissance spirituelle.
-                        </div>
-                    </li>
-                    <li class="why-list-item">
-                        <svg class="why-check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <div class="why-list-content">
-                            <strong>Design Premium :</strong> Interface soignée digne d'Apple. Animations fluides et attention aux détails.
-                        </div>
-                    </li>
-                    <li class="why-list-item">
-                        <svg class="why-check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <div class="why-list-content">
-                            <strong>Respect Utilisateur :</strong> Une seule tentative par jour. Pas de spam, pas de pub, pas de contenu caché.
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
     <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Questions fréquentes</h2>
-            </div>
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>
-                        <span>Comment fonctionne le renouvellement quotidien ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Chaque jour à minuit, un nouveau shot biblique est disponible. Tu peux le lire, le partager, l'ajouter à tes favoris et tenter le quiz associé une seule fois.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>
-                        <span>L'application nécessite-t-elle une connexion internet ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Non, BibleShot fonctionne entièrement hors ligne. Tous les shots et versets sont stockés localement sur ton iPhone.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>
-                        <span>Est-ce que l'application est gratuite ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Oui, BibleShot est entièrement gratuite et accessible à tous, avec toutes ses fonctionnalités. Si vous souhaitez soutenir le développement de l'application, vous pouvez souscrire à un abonnement de soutien volontaire dans l'App Store.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>
-                        <span>Puis-je personnaliser l'heure de ma notification ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Oui, tu peux choisir l'heure qui te convient le mieux pour recevoir ton rappel quotidien, ou désactiver complètement les notifications.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>
-                        <span>Quelle version biblique est utilisée ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>BibleShot utilise des versets issus de la version Louis Segond 1910, adaptés en format court pour créer les "shots" inspirants.</p>
-                        </div>
-                    </div>
-                </details>
-                <details class="faq-item">
-                    <summary>
-                        <span>L'application est-elle disponible sur Android ?</span>
-                        <span class="faq-icon">+</span>
-                    </summary>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Pour le moment, BibleShot est uniquement disponible sur iOS (iPhone). Nous nous concentrons sur l'excellence de l'expérience iPhone.</p>
-                        </div>
-                    </div>
-                </details>
-            </div>
+      <div class="container faq-layout">
+        <div class="faq-heading">
+          <p class="eyebrow"><span></span> Questions fréquentes</p>
+          <h2>Tout ce qu’il faut savoir avant ton premier shot.</h2>
+          <p>Une question reste sans réponse ? <a href="/support">Écris-nous.</a></p>
         </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Est-ce que BibleShot est gratuit ?<span>+</span></summary>
+            <p>L’expérience complète nécessite un abonnement mensuel ou annuel. Le prix et l’éventuelle période d’essai sont toujours affichés dans l’app avant confirmation.</p>
+          </details>
+          <details>
+            <summary>Quelle version de la Bible est utilisée ?<span>+</span></summary>
+            <p>BibleShot s’appuie sur 365 versets de la Bible Segond 21. Chaque punchline est inspirée du texte, tandis que le verset original reste affiché séparément.</p>
+          </details>
+          <details>
+            <summary>L’app fonctionne-t-elle sans internet ?<span>+</span></summary>
+            <p>Oui pour les shots, quiz et données de progression, qui restent sur ton iPhone. Une connexion est nécessaire pour installer l’app, souscrire ou restaurer un abonnement.</p>
+          </details>
+          <details>
+            <summary>Est-elle disponible sur Android ?<span>+</span></summary>
+            <p>Pas encore. BibleShot est actuellement conçue exclusivement pour l’iPhone afin d’offrir une expérience iOS vraiment soignée.</p>
+          </details>
+        </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="download">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Prêt à transformer ta routine spirituelle ?</h2>
-                <p class="cta-subtitle">Alors télécharge l'application sur l'App Store</p>
-                <div class="hero-cta">
-                    <a href="https://apps.apple.com/fr/app/bibleshot-un-shot-un-quiz/id6753938756" class="app-store-badge-hero" aria-label="Télécharger sur l'App Store">
-                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83&releaseDate=1234569600" alt="Télécharger dans l'App Store">
-                    </a>
-                </div>
-            </div>
-        </div>
+    <section class="final-cta" id="download">
+      <div class="final-orb final-orb--one" aria-hidden="true"></div>
+      <div class="final-orb final-orb--two" aria-hidden="true"></div>
+      <div class="container final-content">
+        <img src="/assets/images/icon.png" alt="" width="1024" height="1024">
+        <p>Ton premier shot t’attend.</p>
+        <h2>Et si demain commençait autrement ?</h2>
+        <a class="store-button store-button--large store-button--light" href={appStoreUrl} aria-label="Télécharger BibleShot sur l’App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.34-.07 2.27.74 3.05.8 1.17-.24 2.29-.93 3.54-.84 1.5.12 2.63.71 3.38 1.8-3.09 1.85-2.36 5.92.48 7.06-.57 1.5-1.31 2.99-2.45 4.16zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+          <span><small>Télécharger sur</small><strong>l’App Store</strong></span>
+        </a>
+        <small>Disponible sur iPhone · Installation via l’App Store</small>
+      </div>
     </section>
+  </main>
 </BaseLayout>

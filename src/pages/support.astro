@@ -27,13 +27,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <h3>Combien de fois puis-je faire le quiz ?</h3>
                 <p>Tu as <strong>une seule tentative par jour</strong> pour chaque quiz. C'est une fonctionnalité volontaire pour encourager la réflexion et éviter le spam. Reviens demain pour un nouveau défi !</p>
 
-                <h3>Comment changer le thème visuel ?</h3>
-                <p>Pour changer le thème :</p>
+                <h3>Comment personnaliser la formulation des shots ?</h3>
+                <p>Pour choisir une formulation au masculin ou au féminin :</p>
                 <ol>
                     <li>Clique sur l'icône de <strong>profil</strong> (en bas à droite)</li>
-                    <li>Sélectionne <strong>"Thème"</strong></li>
-                    <li>Choisis parmi les 7 thèmes disponibles</li>
+                    <li>Sélectionne <strong>« Formulation des shots »</strong></li>
+                    <li>Choisis la formulation qui te convient</li>
                 </ol>
+                <p>Cette préférence adapte uniquement les punchlines. Le texte des versets Segond 21 reste inchangé.</p>
+
+                <h3>Comment ajouter le widget « Shot du jour » ?</h3>
+                <p>BibleShot propose des widgets pour l'écran d'accueil et l'écran de verrouillage de ton iPhone :</p>
+                <ol>
+                    <li><strong>Écran d'accueil :</strong> reste appuyé sur l'écran d'accueil, touche <strong>« + »</strong> puis cherche <strong>BibleShot</strong></li>
+                    <li><strong>Écran de verrouillage :</strong> reste appuyé sur l'écran de verrouillage, touche <strong>« Personnaliser »</strong>, puis ajoute le widget BibleShot</li>
+                </ol>
+                <p>Le shot du jour s'affiche et se met à jour automatiquement à minuit, même sans ouvrir l'app.</p>
 
                 <h3>Comment activer/désactiver les notifications ?</h3>
                 <p>Pour gérer les notifications :</p>
@@ -75,7 +84,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </ul>
 
                 <h3>L'application nécessite-t-elle internet ?</h3>
-                <p><strong>Non !</strong> BibleShot fonctionne entièrement hors ligne. Aucune connexion internet n'est requise après l'installation.</p>
+                <p>Les shots, versets, quiz et données de progression sont stockés localement. Une connexion internet reste nécessaire pour installer l’app, souscrire ou restaurer un abonnement.</p>
 
                 <h3>Mes données sont-elles sauvegardées ?</h3>
                 <p>Oui, toutes tes données (progression, favoris, statistiques) sont sauvegardées localement sur ton iPhone. Elles ne seront pas perdues si tu fermes l'application.</p>
@@ -100,8 +109,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <li>Comment tu l'imagines dans l'application</li>
                 </ul>
 
-                <h2>Demander un remboursement</h2>
-                <p>Si vous avez souscrit à l'abonnement de soutien, les remboursements sont gérés directement par Apple via l'App Store.</p>
+                <h2>Abonnement, restauration et remboursement</h2>
+                <p>L’accès à BibleShot après l’onboarding nécessite un abonnement mensuel ou annuel actif. Tu peux le gérer ou l’annuler depuis les réglages de ton compte Apple. Pour retrouver un abonnement existant, utilise <strong>« Restaurer mes achats »</strong> sur l’écran d’abonnement.</p>
+                <p>Les demandes de remboursement sont gérées directement par Apple via l’App Store.</p>
                 <p>Pour demander un remboursement :</p>
                 <ol>
                     <li>Va sur <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a></li>
@@ -117,21 +127,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <div class="info-box">
                     <ul>
                         <li><strong>Plateforme :</strong> iOS uniquement (iPhone)</li>
-                        <li><strong>Version iOS minimale :</strong> iOS 14.0 ou supérieur</li>
+                        <li><strong>Version iOS minimale :</strong> iOS 15.1 ou supérieur</li>
                         <li><strong>Espace de stockage :</strong> Environ 50 MB</li>
-                        <li><strong>Internet :</strong> Non requis (fonctionne hors ligne)</li>
-                        <li><strong>Compatibilité :</strong> iPhone 6s et modèles ultérieurs</li>
+                        <li><strong>Internet :</strong> Requis pour l’installation, l’abonnement et sa restauration ; le contenu quotidien reste disponible localement</li>
+                        <li><strong>Compatibilité :</strong> iPhone compatible avec iOS 15.1 ou supérieur</li>
                     </ul>
                 </div>
 
                 <h2>Sécurité et confidentialité</h2>
                 <p>BibleShot prend votre confidentialité très au sérieux :</p>
                 <ul>
-                    <li>✅ Aucune donnée personnelle collectée</li>
-                    <li>✅ Aucun tracking ou analytique</li>
-                    <li>✅ Toutes vos données restent sur votre iPhone</li>
-                    <li>✅ Aucun partage avec des tiers</li>
-                    <li>✅ Fonctionnement 100% hors ligne</li>
+                    <li>✅ Progression, favoris et statistiques stockés localement</li>
+                    <li>✅ Aucune collecte de nom, d’email ou de localisation précise</li>
+                    <li>✅ Mesure d’usage pseudonymisée via Mixpanel</li>
+                    <li>✅ Attribution des campagnes via Tenjin, avec IDFA uniquement après consentement</li>
+                    <li>✅ Gestion de l’abonnement via RevenueCat et Apple</li>
                 </ul>
                 <p>Pour plus de détails, consultez notre <a href="/privacy">Politique de Confidentialité</a>.</p>
 
